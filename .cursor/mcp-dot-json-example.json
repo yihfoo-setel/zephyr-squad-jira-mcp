@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "zephyr_squad_mcp": {
+      "command": "python",
+      "args": [
+        "zephyr_squad_mcp.py"
+      ],
+      "env": {
+        "ZEPHYR_ACCESS_KEY": "your-access-key-here",
+        "ZEPHYR_SECRET_KEY": "your-secret-key-here",
+        "ZEPHYR_USERNAME": "your-zephyr-username-here",
+        "JIRA_BASE_URL": "",
+        "JIRA_USER_ID": "",
+        "JIRA_ACCESS_TOKEN": ""
+      }
+    }
+  }
+}
