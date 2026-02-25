@@ -1,14 +1,15 @@
 import os
 import sys
-
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-
-from fastmcp import FastMCP
 import logging
+
 import requests
-from zephyr.zephyr_squad_token_gen import generate_zephyr_jwt
-from jira.jira_const import project_key_list
-from jira.jira_service import resolve_issue_id
+from fastmcp import FastMCP
+
+from zephyr_squad_jira_mcp.zephyr_squad.zephyr_squad_token_gen import (
+    generate_zephyr_jwt,
+)
+from zephyr_squad_jira_mcp.jira.jira_const import project_key_list
+from zephyr_squad_jira_mcp.jira.jira_service import resolve_issue_id
 
 # Constants
 ZEPHYR_ACCESS_KEY = os.environ.get("ZEPHYR_ACCESS_KEY")
@@ -65,8 +66,7 @@ def get_test_steps(issue_key: str) -> list[dict]:
     ]
 
 
-# MCP init
-if __name__ == "__main__":
+def main():
     logger.info(f"Starting MCP Server '{name}'...")
     try:
         mcp.run()
@@ -75,3 +75,7 @@ if __name__ == "__main__":
         sys.exit(1)
     finally:
         logger.info("Server terminated")
+
+
+if __name__ == "__main__":
+    main()

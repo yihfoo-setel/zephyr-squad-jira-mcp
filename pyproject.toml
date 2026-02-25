@@ -1,0 +1,24 @@
+[project]
+name = "zephyr-squad-jira-mcp"
+version = "0.1.0"
+description = "MCP server for Zephyr Squad + Jira integration"
+authors = [
+    {name = "Looi Yih Foo", email = "yihfoo@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.32.3",
+    "fastmcp>=0.4.1",
+    "PyJWT>=2.10.1",
+]
+
+[project.scripts]
+zephyr-squad-jira-mcp = "zephyr_squad_jira_mcp.zephyr_squad_jira_mcp:main"
+
+[tool.poetry]
+packages = [{include = "zephyr_squad_jira_mcp", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
